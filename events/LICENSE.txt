@@ -1,6 +1,6 @@
 The MIT License (MIT)
 
-Copyright (c) 2023 Nikolay Talanov (https://codepen.io/suez/pen/rLGvxr)
+Copyright (c) 2023 Stefano (https://codepen.io/design007/pen/gOZOYyz)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

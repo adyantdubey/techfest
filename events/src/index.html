@@ -1,123 +1,163 @@
-<div class="cont s--inactive">
-  <!-- cont inner start -->
-  <div class="cont__inner">
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 1</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">1</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="1">1</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 2</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">2</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="2">2</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 3</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">3</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="3">3</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 4</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">4</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="4">4</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 5</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">5</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="5">5</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-  </div>
-  <!-- cont inner end -->
-</div>
+<div class="container py-5">
 
-<a href="https://dribbble.com/shots/2802024-Satellite-Website-Prototype" target="_blank" class="icon-link">
-  <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
-</a>
-<a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
-  <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
-</a>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100" style="position: relative">
+        <div class="bottom-right">17/08/2023</div>
+        <div class="top-right">
+          <div class="tags-list mb-2">
+            <span class="tags-list-town text-uppercase">NEW YORK</span>
+            <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+              FREE
+            </span>
+          </div>
+        </div>
+        <div class="image-container">
+          <div class="bottom-left">
+            <div class="thumbnail" style="background-color: #ffa5009e">
+              <div class="thumbnail-date">
+                <span class="thumbnail-date-day">17</span>
+                <span class="thumbnail-date-month">ago</span>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <img src="https://images.pexels.com/photos/1230397/pexels-photo-1230397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top" alt="Image" /></a>
+          <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
+            <div>
+              Cheers and Grooves in the Heart of New York!
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="position: relative">
+        <div class="bottom-right">20/09/2023</div>
+        <div class="top-right">
+          <div class="tags-list mb-2">
+            <span class="tags-list-town text-uppercase">ROME</span>
+            <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+              FREE
+            </span>
+          </div>
+        </div>
+        <div class="image-container">
+          <div class="bottom-left">
+            <div class="thumbnail" style="background-color: #00800070">
+              <div class="thumbnail-date">
+                <span class="thumbnail-date-day">20</span>
+                <span class="thumbnail-date-month">sep</span>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top" alt="Image" /></a>
+          <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
+            <div>
+              CSips and Sway: Where Rome Dances the Night Away!
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="position: relative">
+        <div class="bottom-right">31/12/2023</div>
+        <div class="top-right">
+          <div class="tags-list mb-2">
+            <span class="tags-list-town text-uppercase">PARIS</span>
+            <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+              FREE
+            </span>
+          </div>
+        </div>
+        <div class="image-container">
+          <div class="bottom-left">
+            <div class="thumbnail" style="background-color: #ff000070">
+              <div class="thumbnail-date">
+                <span class="thumbnail-date-day">31</span>
+                <span class="thumbnail-date-month">dec</span>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <img src="https://images.pexels.com/photos/2526105/pexels-photo-2526105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top" alt="Image" /></a>
+          <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
+            <div>
+              Countdown to Joy: New Year's Eve Bash in Paris!
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100" style="position: relative">
+        <div class="bottom-right">17/03/2024</div>
+        <div class="top-right">
+          <div class="tags-list mb-2">
+            <span class="tags-list-town text-uppercase">DUBLIN</span>
+            <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+              FREE
+            </span>
+          </div>
+        </div>
+        <div class="image-container">
+          <div class="bottom-left">
+            <div class="thumbnail" style="background-color: #2196f3ad">
+              <div class="thumbnail-date">
+                <span class="thumbnail-date-day">17</span>
+                <span class="thumbnail-date-month">mar</span>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <img src="https://images.pexels.com/photos/1441460/pexels-photo-1441460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top" alt="Image" /></a>
+          <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
+            <div>
+              Luck and Laughter: Embrace the Spirit of St. Patrick's Day!
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100" style="position: relative">
+        <div class="bottom-right">31/02/2024</div>
+        <div class="top-right">
+          <div class="tags-list mb-2">
+            <span class="tags-list-town text-uppercase">WORLD</span>
+            <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+              FREE
+            </span>
+          </div>
+        </div>
+        <div class="image-container">
+          <div class="bottom-left">
+            <div class="thumbnail" style="background-color: #673ab794">
+              <div class="thumbnail-date">
+                <span class="thumbnail-date-day">31</span>
+                <span class="thumbnail-date-month">Feb</span>
+              </div>
+            </div>
+          </div>
+          <a href="#">
+            <img src="https://images.pexels.com/photos/813787/pexels-photo-813787.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top" alt="Image" /></a>
+          <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
+            <div>
+              Party Bad!
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

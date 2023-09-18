@@ -1,138 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Cool Layout with Complex Chainable Animation</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'><link rel="stylesheet" href="./style.css">
+  <title>CodePen - Responsive Event Cards with Bootstrap 5: Elevate Your Event Experience</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Add this CSS to handle the expanded image */
+    .expanded-card {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
 
+    .expanded-content {
+      max-width: 80%;
+      max-height: 80%;
+      overflow: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      text-align: center;
+      color: #000;
+    }
+
+    .expanded-text {
+      margin-top: 20px; /* Add margin to create space between image and text */
+    }
+
+    .expanded-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    /* Additional styles for cards */
+    .card {
+      background-color: #000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="cont s--inactive">
-  <!-- cont inner start -->
-  <div class="cont__inner">
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 1</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Card 1 -->
+    <div class="col">
+      <div class="card h-100" style="position: relative">
+        <div class="bottom-right">17/08/2023</div>
+        <div class="top-right">
+          <div class="tags-list mb-2">
+            <span class="tags-list-town text-uppercase">NEW YORK</span>
+            <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+              FREE
+            </span>
           </div>
         </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">1</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="1">1</div>
+
+        <!-- Other card content -->
+        <div class="image-container">
+          <div class="bottom-left">
+            <div class="thumbnail" style="background-color: #ffa5009e">
+              <div class="thumbnail-date">
+                <span class="thumbnail-date-day">17</span>
+                <span class="thumbnail-date-month">ago</span>
+              </div>
+            </div>
+          </div>
+
+          <img src="../image/colloquium.jpeg" class="card-img-top" alt="Image" />
+          
+          <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
+            <a href="#" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/colloquium.jpeg'); return false;">
+              <div style="color: #fff;">
+                Cheers and Grooves in the Heart of New York!
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 2</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">2</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="2">2</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 3</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">3</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="3">3</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 4</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">4</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="4">4</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
-    <!-- el start -->
-    <div class="el">
-      <div class="el__overflow">
-        <div class="el__inner">
-          <div class="el__bg"></div>
-          <div class="el__preview-cont">
-            <h2 class="el__heading">Section 5</h2>
-          </div>
-          <div class="el__content">
-            <div class="el__text">Whatever</div>
-            <div class="el__close-btn"></div>
-          </div>
-        </div>
-      </div>
-      <div class="el__index">
-        <div class="el__index-back">5</div>
-        <div class="el__index-front">
-          <div class="el__index-overlay" data-index="5">5</div>
-        </div>
-      </div>
-    </div>
-    <!-- el end -->
+    <!-- Repeat for other cards -->
   </div>
-  <!-- cont inner end -->
 </div>
 
-<a href="https://dribbble.com/shots/2802024-Satellite-Website-Prototype" target="_blank" class="icon-link">
-  <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
-</a>
-<a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
-  <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
-</a>
-<!-- partial -->
-  <script  src="./script.js"></script>
+<!-- Expanded card content -->
+<div class="expanded-card" id="expandedCard">
+  <div class="expanded-content">
+    <span class="expanded-close" onclick="closeCard()">&times;</span>
+    <img src="" alt="Expanded Image" id="expandedImage" style="max-width: 100%; max-height: 70vh;">
+    <div class="expanded-text">
+      <p>This is some additional text that becomes visible when scrolling down.</p>
+    </div>
+  </div>
+</div>
 
+<script>
+  // JavaScript functions to handle card expansion and closure
+  function expandCard(text, imgUrl) {
+    const expandedCard = document.getElementById('expandedCard');
+    const expandedImage = document.getElementById('expandedImage');
+
+    expandedImage.src = imgUrl;
+
+    expandedCard.style.opacity = '1';
+    expandedCard.style.pointerEvents = 'auto';
+  }
+
+  function closeCard() {
+    const expandedCard = document.getElementById('expandedCard');
+    expandedCard.style.opacity = '0';
+    expandedCard.style.pointerEvents = 'none';
+  }
+</script>
 </body>
 </html>

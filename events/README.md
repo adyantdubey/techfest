@@ -1,11 +1,5 @@
-# Cool Layout with Complex Chainable Animation
+# Responsive Event Cards with Bootstrap 5: Elevate Your Event Experience
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/suez/pen/rLGvxr](https://codepen.io/suez/pen/rLGvxr).
+A Pen created on CodePen.io. Original URL: [https://codepen.io/design007/pen/gOZOYyz](https://codepen.io/design007/pen/gOZOYyz).
 
-Based on this - https://dribbble.com/shots/2802024-Satellite-Website-Prototype
-
-Based on addition of just 2 classes with JS (and simple hover) this demo features a lot of cool chaining animations, combined with good performance and sort-of easy-to-maintain scss.
-
-!!! PLEASE BETTER CHECK IN FIREFOX AND READ WHY BELOW !!!
-
-Important note - after some changes in Chrome, which happened somewhere around September, the performance of this demo drastically reduced. I did some optimizations with adding will-change to some things, but it's still laggy as hell, even on a good machine. Originally, when it was created in July, it was working perfectly fine (as it works right now in FF, just tested in 50.1.0 version).
+Explore our collection of responsive event cards created with Bootstrap 5. Discover engaging and visually appealing cards that beautifully showcase event details. From conferences to concerts, these cards ensure an enhanced event browsing experience. Dive in now!"
