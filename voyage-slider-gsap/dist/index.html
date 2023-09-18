@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Voyage Slider | GSAP</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Navbar -->
+<div class="navbar">
+	<div class="navbar__logo">
+	  <a href="#home">Logo</a>
+	</div>
+	<div class="navbar__links">
+	  <a href="#home">Home</a>
+	  <a href="#about">About</a>
+	  <a href="#services">Services</a>
+	  <a href="#contact">Contact</a>
+	  <!-- Add more links as needed -->
+	</div>
+  </div>
+  
+<div class="app">
+
+	<div class="cardList">
+		<button class="cardList__btn btn btn--left">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-left"></use>
+				</svg>
+			</div>
+		</button>
+
+		<div class="cards__wrapper">
+			<div class="card current--card" onclick="window.location.href = '../../events/dist/index.html';">
+				<div class="card__image">
+					<img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+				</div>
+			</div>
+
+			<div class="card next--card" onclick="window.location.href = '../../members/dist/index.html';">
+				<div class="card__image">
+					<img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+				</div>
+			</div>
+
+			<div class="card previous--card">
+				<div class="card__image">
+					<img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+				</div>
+			</div>
+		</div>
+
+		<button class="cardList__btn btn btn--right">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-right"></use>
+				</svg>
+			</div>
+		</button>
+	</div>
+
+	<div class="infoList">
+		<div class="info__wrapper">
+			<div class="info current--info">
+				<h1 class="text name">Events</h1>
+				<h4 class="text location">AI & Robotics Club</h4>
+				<p class="text description">Relive the moments</p>
+			</div>
+
+			<div class="info next--info">
+				<h1 class="text name">Members</h1>
+				<h4 class="text location">AI & Robotics Club</h4>
+				<p class="text description">Our members</p>
+			</div>
+
+			<div class="info previous--info">
+				<h1 class="text name">Register</h1>
+				<h4 class="text location">AI & Robotics Club</h4>
+				<p class="text description">Join the Family</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="app__bg">
+		<div class="app__bg__image current--image">
+			<img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+		</div>
+		<div class="app__bg__image next--image">
+			<img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+		</div>
+		<div class="app__bg__image previous--image">
+			<img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+		</div>
+	</div>
+</div>
+
+<div class="loading__wrapper">
+	<div class="loader--text">Loading...</div>
+	<div class="loader">
+		<span></span>
+	</div>
+</div>
+
+
+
+<svg class="icons" style="display: none;">
+	<symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='328 112 184 256 328 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+	<symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='184 112 328 256 184 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+</svg>
+
+
+
+
+<div class="intro-content relative p-8 w-full bg-peach">
+	<div class="m-auto w-full max-w-5xl text-center">
+	  <div id="content-top" class="w-full h-20 lg:h-24"></div>
+	  <div class="flex justify-center items-center mb-8">
+		<h2 class="text-4xl font-bold mb-4" style="font-size: 60px; color: #fff;">Welcome to the AI and Robotics Club of Andhra Pradesh</h2>
+	  </div>
+	  <div class="text-spacing">
+		<p class="mb-4" style="font-size: 20px; color: aqua; margin: 0 auto; max-width: 800px;">
+		  Are you fascinated by the incredible world of Artificial Intelligence and Robotics? Do you dream of building innovative robots, exploring cutting-edge technology, and collaborating with like-minded enthusiasts? Look no further! The AI and Robotics Club of Andhra Pradesh is your gateway to a thrilling journey of discovery and creation.
+		</p>
+		<h2 class="text-4xl font-bold mb-4" style="font-size: 40px; color: #fff; text-align: left;">Who We Are</h2>
+		<p class="mb-4" style="font-size: 20px; color: aqua; margin: 0 auto; max-width: 800px;">
+		  We are a passionate and dynamic community of tech enthusiasts, engineers, and visionaries based in Andhra Pradesh, united by our love for AI and Robotics. Our club is dedicated to nurturing talent, fostering creativity, and pushing the boundaries of what's possible in the fields of Artificial Intelligence and Robotics.
+		</p>
+		<h2 class="text-4xl font-bold mb-4" style="font-size: 40px; color: #fff; text-align: left;">What We Do</h2>
+		<p class="mb-4" style="font-size: 20px; color: aqua; margin: 0 auto; max-width: 800px;">
+		  At the AI and Robotics Club, we believe in hands-on learning. Our members actively engage in a wide range of exciting projects, from building autonomous drones and robotic arms to developing intelligent algorithms. We host workshops, seminars, and hackathons to empower our members with the latest knowledge and skills in these fields.
+		</p>
+	  </div>
+	  <a class="py-4 px-6 rounded-full font-bold text-roborange border-2 border-roborange text-xl hover:text-white hover:bg-roborange transition-all duration-300" href="/intro">Join Our Community</a>
+	  <hr class="mt-16">
+	</div>
+  </div>
+  
+  
+
+
+
+
+
+
+<div class="support">
+	<a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
+	<a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
+</div>
+
+<!-- partial -->
+  <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
