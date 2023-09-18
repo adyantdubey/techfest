@@ -5,8 +5,9 @@ $con = mysqli_connect('localhost', 'root', 'Adm1n1str@t0r','airclub');
 // get the post records
 
 
-$query = "SELECT * FROM member_details order by Member_rank desc";
+$query = "SELECT * FROM member_details";
 $result = mysqli_query($con, $query);
+
 ?>
 
 <table class="container" border ="2" cellspacing="5" cellpadding="5">
