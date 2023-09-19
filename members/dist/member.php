@@ -1,67 +1,29 @@
+
+<?php include 'navbar.php'; ?>
+
 <?php
 
-$con = mysqli_connect('localhost', 'root', 'Adm1n1str@t0r','airclub');
-
-// get the post records
-
-
-$query = "SELECT * FROM member_details order by Member_rank desc";
-$result = mysqli_query($con, $query);
-?>
-
-<table class="container" border ="2" cellspacing="5" cellpadding="5">
-    <tr>
-      <th align="center">idpersonaldetails</th>
-      <th align="center">Name</th>
-     
-      <th align="center">Email</th>
-      <th align="center">Contact No</th>
-      <th align="center">Country</th>
-    
-      <th align="center">Email</th>
-      <th align="center">Contact No</th>
-      <th align="center">Country</th>
-  
-    </tr>
-<?php
-if (mysqli_num_rows($result) > 0) {
-  $sn=1;
-  while($data = mysqli_fetch_assoc($result)) {
- ?>
- <tr>
-
-   <td align="center"><?php echo $data['Member_name']; ?> </td>
-   <td align="center"><?php echo $data['Member_id']; ?> </td>
-   <td align="center"><?php echo $data['Member_field']; ?> </td>
-   <td align="center"><?php echo $data['Member_designation']; ?> </td>
-   <td align="center"><?php echo $data['Member_rank']; ?> </td>
-   <td align="center"><?php echo $data['Member_email']; ?> </td>
-
-   <td align="center"><?php echo $data['Member_contact']; ?> </td>
-   <td align="center"><?php echo $data['Member_photourl']; ?> </td>
-</tr>
-
- <?php
-  $sn++;}} else { ?>
-    <tr>
-     <td colspan="8">No data found</td>
-    </tr>
- <?php } ?>
-
- </table>
-
-
-<!-- 
-<li>
-<a href="https://swop.link/cool" target="_blank" class="profile">
-  <h2 class="profile__name">'. $name .'</h2>
-  <p>Secretary</p>
-  <img alt="' . $name . '" src="'. $link .'" />
-</a>
-</li>';
+$con = mysqli_connect('localhost', 'root', '', 'airclub');
 
 
 
+
+$query = "SELECT * FROM member_details order by Member_rank";
+
+
+$mname = "";
+
+$mid = "";
+
+$mfield = "";
+
+$mdesignation = "";
+
+$mrank = "";
+
+$mmail = "";
+
+$mcontact = "";
 
 ?>
 
@@ -72,34 +34,82 @@ if (mysqli_num_rows($result) > 0) {
   <title>CodePen - Build a fancy hover animation - complete</title>
   <link rel='stylesheet' href='https://unpkg.com/modern-css-reset/dist/reset.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuOiBodHRwczovL2NvZGVwZW4uaW8vU2FyYW1hemFsICYgR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2FyYW1hemFs -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!-- <style>
+        /* Add styles for the navbar here */
+        .navbar {
+            background-color: #333; /* Change the background color as needed */
+            padding: 10px 0;
+            color: #fff; /* Change the text color as needed */
+        }
+
+        .navbar a {
+            color: #fff; /* Change the link text color as needed */
+            text-decoration: none;
+            margin: 0 20px; /* Adjust spacing between links */
+        }
+
+        .navbar a:hover {
+            text-decoration: underline; /* Add an underline on hover if desired */
+        }
+    </style> -->
+
+
+
 
 </head>
 <body>
+  
+    <!-- <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Team</a>
+        <a href="#">Contact</a>
+    </div> -->
+
+
 <article class="flow">
+  <br><br><br>
+  <div>
+
+  
   <h1>Our Team</h1>
-  <p>Hover or focus over each card to see the person’s job title slide in and the colour treatment change.</p>
+  
   <div class="team">
     <ul class="auto-grid" role="list">
-      <?php $result = $conn->query($query);
-
+      
+      <?php
+      $result = mysqli_query($con, $query);
       if ($result->num_rows > 0) {
-         // Initialize a counter variable
-        while ($row = $result->fetch_assoc()) {
-          // Store image URLs in variables with a unique name (e.g., $imgurl1, $imgurl2, etc.)
-          $name=$row["name"]
-          $link =$row["link"]
-          echo $large;
-        }
-      }
-      ?>
-      <li>
+        while ($data = $result->fetch_assoc()) {
+          echo '
+               <li>
         <a href="https://swop.link/cool" target="_blank" class="profile">
-          <h2 class="profile__name">Lakim Zakir Pronay</h2>
-          <p>Secretary</p>
-          <img alt="Lakim Zakir Pronay" src="" />
+          <h2 class="profile__name">' . $data["Member_name"] . '</h2>
+          <p>' . $data["Member_designation"] . '</p>
+          <img alt="' . $data["Member_name"] . '" src="" />
         </a>
       </li>
-      <li>
+               ';
+        }
+      }
+
+
+
+
+
+
+
+      ?>
+    
+      <!-- <li>
         <a href="https://swop.link/cool" target=_blank" class="profile">
           <h2 class="profile__name">Harshita Gupta</h2>
           <p>Co-Secretary</p>
@@ -154,12 +164,12 @@ if (mysqli_num_rows($result) > 0) {
           <p>Mechanical Lead</p>
           <img alt="Profile shot for Chad" src="https://source.unsplash.com/7jCYw6a2Wao/800x800" />
         </a>
-      </li>
+      </li> -->
       
     </ul>
   </div>
 </article>
-partial
-  
-</body> -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="../dist/script2.js"></script>
 
+  
+</body> 

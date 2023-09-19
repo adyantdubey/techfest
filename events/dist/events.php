@@ -1,3 +1,19 @@
+<?php include 'navbar.php'; ?>
+
+<?php
+
+$con = mysqli_connect('localhost', 'root', '', 'airclub');
+
+
+
+
+$query = "SELECT * FROM event_details";
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +21,17 @@
   <title>CodePen - Responsive Event Cards with Bootstrap 5: Elevate Your Event Experience</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuOiBodHRwczovL2NvZGVwZW4uaW8vU2FyYW1hemFsICYgR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2FyYW1hemFs -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
   <style>
     /* Add this CSS to handle the expanded image */
     .expanded-card {
@@ -57,20 +84,28 @@
 <body>
 <div class="container py-5">
   <div class="row row-cols-1 row-cols-md-3 g-4">
+  
     <!-- Card 1 -->
     <div class="col">
+    <div class="card h-100" style="position: relative"><div class="card h-100" style="position: relative">
+        <?php
+        $result = mysqli_query($con, $query);
+        if ($result->num_rows > 0) {
+          while ($data = $result->fetch_assoc()) {
+            echo '
+                <div class="col">
       <div class="card h-100" style="position: relative">
-        <div class="bottom-right">17/08/2023</div>
+        <div class="bottom-right">' . $data["event_date"] . '</div>
         <div class="top-right">
           <div class="tags-list mb-2">
-            <span class="tags-list-town text-uppercase">NEW YORK</span>
+            <span class="tags-list-town text-uppercase">' . $data["event_place"] . '</span>
             <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
               FREE
             </span>
           </div>
         </div>
 
-        <!-- Other card content -->
+        
         <div class="image-container">
           <div class="bottom-left">
             <div class="thumbnail" style="background-color: #ffa5009e">
@@ -84,15 +119,31 @@
           <img src="../image/colloquium.jpeg" class="card-img-top" alt="Image" />
           
           <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
-            <a href="#" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/colloquium.jpeg'); return false;">
+            <a href="#" onclick="expandCard(' . $data["event_name"] . '"," ' . $data["event_photo"] . '); return false;">
               <div style="color: #fff;">
-                Cheers and Grooves in the Heart of New York!
+                ' . $data["event_name"] . '
               </div>
             </a>
           </div>
         </div>
       </div>
     </div>
+                
+                ';
+          }
+        }
+
+
+
+
+
+
+        ?>
+      
+        
+
+        <!-- Other card content -->
+        
     <!-- Repeat for other cards -->
   </div>
 </div>
@@ -126,5 +177,7 @@
     expandedCard.style.pointerEvents = 'none';
   }
 </script>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="../dist/script2.js"></script>
 </body>
 </html>
