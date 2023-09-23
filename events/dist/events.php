@@ -46,13 +46,14 @@ $query = "SELECT * FROM events";
         $result = mysqli_query($con,$query);
         if($result->num_rows >0){
           while($data = $result->fetch_assoc()){
+            $img1="../image/image1.jpeg";
             echo'
             <div class="col" style="padding: 20px;">
             <div class="card h-100" style="position: relative; max-width: 40%;">
-                <div class="bottom-right">'.$data["event-date"].'</div>
+                <div class="bottom-right">17/08/2023</div>
                 <div class="top-right">
                     <div class="tags-list mb-2">
-                        <span class="tags-list-town text-uppercase">'.$data["event_place"] . '</span>
+                        <span class="tags-list-town text-uppercase">NEW YORK</span>
                         <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
                             FREE
                         </span>
@@ -73,25 +74,15 @@ $query = "SELECT * FROM events";
                     <img src="../image/image1.jpeg" class="card-img-top" alt="Image" style="width: 100%; height: 100%; object-fit: cover;" onclick="expandCard("Cheers and Grooves in the Heart of New York!", "../image/image1.jpeg"); return false;" />
                     
                     <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase" style="color: #fff; position: absolute; display:flex; align-items:center;justify-content:center">
-                        <a href="#" onclick="expandCard("Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg"); return false;">
+                        <a href="#" onclick="expandCard(\''.$data['event_description'].'\', \''.$img1.'\'); return false;">
                             <div style="color: #fff; margin-bottom: 25px;">
-                                '.$data["event_name"] .'
+                                '.$data['event_name'].'
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="expandedCard" class="expanded-card">
-    <div class="expanded-content">
-        <img id="expandedImage" src="" alt="Expanded Image" onclick="closeCard()" />
-        <div class="expanded-text">
-            <p style="color: white;">'.$data["event_description"].'</p> <!-- This is where the description text will be inserted -->
-        </div>
-        <button class="close-button" onclick="closeCard()">Close</button>
-    </div>
-</div>
-</div>
             ';
           }
         }
@@ -123,9 +114,9 @@ $query = "SELECT * FROM events";
                     <img src="../image/image1.jpeg" class="card-img-top" alt="Image" style="width: 100%; height: 100%; object-fit: cover;" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg'); return false;" />
                     
                     <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase" style="color: #fff; position: absolute; display:flex; align-items:center;justify-content:center">
-                        <a href="#" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg'); return false;">
+                        <a href="#" onclick="expandCard('hi this is kashik', '../image/image1.jpeg'); return false;">
                             <div style="color: #fff; margin-bottom: 25px;">
-                                COLLOQUIUM-2023
+                                bht hrd-2023
                             </div>
                         </a>
                     </div>
