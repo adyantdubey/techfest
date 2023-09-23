@@ -1,156 +1,158 @@
+<?php include
+$con = mysqli_connect('localhost', 'root', '','airclub');
 
-<?php include 'navbar.php'; ?>
-
-<?php
-
-$con = mysqli_connect('localhost', 'root', '', 'airclub');
-
-
-
-
-$query = "SELECT * FROM event_details";
-
-
+$query = "SELECT * FROM events";
 
 ?>
 
 
 
 
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Responsive Event Cards with Bootstrap 5</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
-  <style>
-    /* Add this CSS to handle the expanded image */
-    .expanded-card {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.3s;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .expanded-content {
-      max-width: 80%;
-      max-height: 80%;
-      overflow: auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      position: relative;
-      text-align: center;
-      color: #000;
-    }
-
-    .expanded-text {
-      margin-top: 20px;
-    }
-
-    .expanded-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    }
-
-    /* Additional styles for cards */
-    .card {
-      background-color: #000;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      cursor: pointer; /* Add cursor pointer to indicate image is clickable */
-    }
-
-    .card img {
-      transition: transform 0.2s;
-    }
-
-    .card:hover img {
-      transform: scale(1.05);
-    }
-  </style>
+  <title>CodePen - Voyage Slider | GSAP</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuOiBodHRwczovL2NvZGVwZW4uaW8vU2FyYW1hemFsICYgR2l0SHViOiBodHRwczovL2dpdGh1Yi5jb20vc2FyYW1hemFs -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 <body>
-<div class="container py-5">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <!-- Card 1 -->
-    <div class="col">
-      <div class="card h-100" style="position: relative">
-        <div class="bottom-right">17/08/2023</div>
-        <div class="top-right">
-          <div class="tags-list mb-2">
-            <span class="tags-list-town text-uppercase">NEW YORK</span>
-            <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
-              FREE
-            </span>
-          </div>
-        </div>
-        <div class="image-container">
-          <div class="bottom-left">
-            <div class="thumbnail" style="background-color: #ffa5009e">
-              <div class="thumbnail-date">
-                <span class="thumbnail-date-day">17</span>
-                <span class="thumbnail-date-month">ago</span>
-              </div>
-            </div>
-          </div>
-          <!-- Add an event description here -->
-          <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase">
-            <a href="#" onclick="expandCard('Cheers and Grooves in the Heart of New York!', 'https://images.pexels.com/photos/1230397/pexels-photo-1230397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); return false;">
-              <div style="color: #fff;">
-                Cheers and Grooves in the Heart of New York!
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Repeat for other cards -->
 
-    <!-- Expanded card content -->
-    <div class="expanded-card" id="expandedCard">
-      <div class="expanded-content">
-        <span class="expanded-close" onclick="closeCard()">&times;</span>
-        <img src="" alt="Expanded Image" id="expandedImage" style="max-width: 100%; max-height: 70vh;">
-        <div class="expanded-text">
-          <p>This is some additional text that becomes visible when scrolling down.</p>
-        </div>
-      </div>
+    <div>
+        
+            
+            <div class="nav-container"><a class="nav-tab" href="../../home/dist/index.php.html">HOME</a><a class="nav-tab" href="../../events/dist/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="#tab-typescript">CONTACT US</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
+          
+          
+          
+          <!-- partial -->
     </div>
-  </div>
+    <div style="display:flex;align-items:center; justify-content:center;">
+    <div class="container py-5" style="margin-top: 5%;">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Card 1 -->
+        <?php 
+        $result = mysqli_query($con,$query);
+        if($result->num_rows >0){
+          while($data = $result->fetch_assoc()){
+            echo'
+            <div class="col" style="padding: 20px;">
+            <div class="card h-100" style="position: relative; max-width: 40%;">
+                <div class="bottom-right">'.$data["event_date"].'</div>
+                <div class="top-right">
+                    <div class="tags-list mb-2">
+                        <span class="tags-list-town text-uppercase">'.$data["event_place"] . '</span>
+                        <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+                            FREE
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Other card content -->
+                <div class="image-container" style="width: auto; height: auto; max-width: 100%; max-height: 100%;">
+                    <div class="bottom-left">
+                        <div class="thumbnail" style="background-color: #ffa5009e">
+                            <div class="thumbnail-date">
+                                <span class="thumbnail-date-day">17</span>
+                                <span class="thumbnail-date-month">ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="../image/image1.jpeg" class="card-img-top" alt="Image" style="width: 100%; height: 100%; object-fit: cover;" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg'); return false;" />
+                    
+                    <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase" style="color: #fff; position: absolute; display:flex; align-items:center;justify-content:center">
+                        <a href="#" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg'); return false;">
+                            <div style="color: #fff; margin-bottom: 25px;">
+                                '.$data["event_name"] .'
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            ';
+          }
+        }
+        ?>
+        
+        <div class="col" style="padding: 20px;">
+            <div class="card h-100" style="position: relative; max-width: 40%;">
+                <div class="bottom-right">17/08/2023</div>
+                <div class="top-right">
+                    <div class="tags-list mb-2">
+                        <span class="tags-list-town text-uppercase">NEW YORK</span>
+                        <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
+                            FREE
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Other card content -->
+                <div class="image-container" style="width: auto; height: auto; max-width: 100%; max-height: 100%;">
+                    <div class="bottom-left">
+                        <div class="thumbnail" style="background-color: #ffa5009e">
+                            <div class="thumbnail-date">
+                                <span class="thumbnail-date-day">17</span>
+                                <span class="thumbnail-date-month">ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="../image/image1.jpeg" class="card-img-top" alt="Image" style="width: 100%; height: 100%; object-fit: cover;" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg'); return false;" />
+                    
+                    <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase" style="color: #fff; position: absolute; display:flex; align-items:center;justify-content:center">
+                        <a href="#" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg'); return false;">
+                            <div style="color: #fff; margin-bottom: 25px;">
+                                COLLOQUIUM-2023
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Repeat for other cards -->
+    </div>
+</div>
+</div>
+<div id = >
+<div id="expandedCard" class="expanded-card">
+    <div class="expanded-content">
+        <img id="expandedImage" src="" alt="Expanded Image" onclick="closeCard()" />
+        <div class="expanded-text">
+            <p style="color: white;">hello i am adyant</p> <!-- This is where the description text will be inserted -->
+        </div>
+        <button class="close-button" onclick="closeCard()">Close</button>
+    </div>
+</div>
 </div>
 
 <script>
-  // JavaScript functions to handle card expansion and closure
-  function expandCard(text, imgUrl) {
-    const expandedCard = document.getElementById('expandedCard');
-    const expandedImage = document.getElementById('expandedImage');
+    // JavaScript functions to handle card expansion and closure
+    function expandCard(text, imgUrl) {
+        const expandedCard = document.getElementById('expandedCard');
+        const expandedImage = document.getElementById('expandedImage');
 
-    expandedImage.src = imgUrl;
+        expandedImage.src = imgUrl;
 
-    expandedCard.style.opacity = '1';
-    expandedCard.style.pointerEvents = 'auto';
+        expandedCard.style.display = 'block';
 
-    // Set the text for the expanded card
-    document.querySelector('.expanded-text p').innerText = text;
-  }
+        // Set the text for the expanded card
+        document.querySelector('.expanded-text p').innerText = text;
+    }
 
-  function closeCard() {
-    const expandedCard = document.getElementById('expandedCard');
-    expandedCard.style.opacity = '0';
-    expandedCard.style.pointerEvents = 'none';
-  }
+    function closeCard() {
+        const expandedCard = document.getElementById('expandedCard');
+        expandedCard.style.display = 'none';
+    }
 </script>
-</body>
-</html>

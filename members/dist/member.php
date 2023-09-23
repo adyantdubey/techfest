@@ -8,7 +8,7 @@ $con = mysqli_connect('localhost', 'root', '', 'airclub');
 
 
 
-$query = "SELECT * FROM member_details order by Member_rank";
+$query = "SELECT * FROM member ";
 
 
 $mname = "";
@@ -81,8 +81,8 @@ $mcontact = "";
 
   
   <h1>Our Team</h1>
-  
-  <div class="team">
+  <div style = "padding: 20px; display:flex; align-content:center;justify-content:center;align-items:center;">
+  <div class="team" style="margin:0 auto;">
     <ul class="auto-grid" role="list">
       
       <?php
@@ -92,9 +92,9 @@ $mcontact = "";
           echo '
                <li>
         <a href="https://swop.link/cool" target="_blank" class="profile">
-          <h2 class="profile__name">' . $data["Member_name"] . '</h2>
-          <p>' . $data["Member_designation"] . '</p>
-          <img alt="' . $data["Member_name"] . '" src="" />
+          <h2 class="profile__name">' . $data["name"] . '</h2>
+          <p>' . $data["id"] . '</p>
+          <img alt="' . $data["qwe"] . '" src="" />
         </a>
       </li>
                ';
@@ -167,6 +167,7 @@ $mcontact = "";
       </li> -->
       
     </ul>
+  </div>
   </div>
 </article>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="../dist/script2.js"></script>

@@ -1,159 +1,424 @@
-a {
-  text-decoration: none;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap");
+:root {
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-transition-duration: 800ms;
+  --card-transition-easing: ease;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.787);
+    scroll-behavior: smooth;
+  } 
+
+  .navbar {
+    background-color: #292828;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar__logo a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .navbar__links a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  
+  .navbar__links a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "ROBOTO", sans-serif;
+  }
+  
+  .nav,
+  .slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: #1e1f26;
+    text-align: center;
+    padding: 0 2em;
+  }
+  
+  .nav h1,
+  .slider h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 5vw;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    letter-spacing: 0.5rem;
+    color: #03dac6;
+    transition: all 0.3s ease;
+    z-index: 3;
+  }
+  h1:hover {
+    transform: translate3d(0, -10px, 22px);
+    color: #ff0266;
+  }
+  
+  .slider h2 {
+    font-size: 2vw;
+    letter-spacing: 0.3rem;
+    font-family: "ROBOTO", sans-serif;
+    font-weight: 300;
+    color: #faebd7;
+    z-index: 4;
+  }
+  h3.span {
+    font-size: 2vw;
+    letter-spacing: 0.7em;
+    font-family: "ROBOTO", sans-serif;
+    font-weight: 300;
+    color: #faebd7;
+    z-index: 4;
+  }
+  span:hover {
+    color: #ff0266;
+    font-weight: 500;
+    font-size: 2.2vw;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    background: #1e1f26;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .nav-container--top-first {
+    position: fixed;
+    top: 75px;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  
+  .nav-container--top-second {
+    position: fixed;
+    top: 0;
+  }
+  .nav-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    color: #03dac6;
+    letter-spacing: 0.1rem;
+    transition: all 0.5s ease;
+    font-size: 2vw;
+  }
+  
+  .nav-tab:hover {
+    color: #1e1f26;
+    background: #03dac6;
+    transition: all 0.5s ease;
+  }
+  
+  .nav-tab-slider {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #03dac6;
+    transition: left 0.3s ease;
+  }
+  .background {
+    position: absolute;
+    height: 90vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: auto;
+  }
+  @media (min-width: 800px) {
+    .nav h1,
+    .slider h1 {
+      font-size: 5vw;
+    }
+  
+    .nav h2,
+    .slider h2 {
+      font-size: 3vw;
+    }
+  
+    .nav-tab {
+      font-size: 3vw;
+    }
+  }
+  
+  @media screen and (min-width: 360px) {
+    .nav h1,
+    .slider h1 {
+      font-size: 8vw;
+    }
+  
+    .nav h2,
+    .slider h2 {
+      font-size: 2vw;
+      letter-spacing: 0.2vw;
+    }
+  
+    .nav-tab {
+      font-size: 1.2vw;
+    }
+  }
+  
+  .background {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+  .loader span {
+    color: #faebd7;
+    text-shadow: 0 0 0 #faebd7;
+    -webkit-animation: loading 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes loading {
+    to {
+      text-shadow: 20px 0 70px #ff0266;
+      color: #ff0266;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 1020px !important;
+  }
+  
+  .thumbnail-date-day {
+    color: rgb(255, 255, 255);
+  }
+  
+  .thumbnail-date-month {
+    color: rgb(255, 255, 255);
+  }
+  
+  div {
+    display: block;
+  }
+  
+  div,span {
+    box-sizing: initial;
+    line-height: 1;
+  }
+  
+  .thumbnail {
+    -webkit-touch-callout: none;
+    border-radius: 3px;
+    box-sizing: initial;
+    height: 52px;
+    min-width: 52px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 52px;
+  }
+  
+  .grey {
+    background-color: #bababaa7;
+  }
+  
+  .thumbnail .thumbnail-date span,
+  .thumbnail .thumbnail-date span {
+    display: inline-block;
+    line-height: 1;
+  }
+  
+  .thumbnail .thumbnail-date .thumbnail-date-day {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 4px;
+    position: relative;
+    text-align: center;
+    top: 4px;
+    width: 100%;
+  }
+  
+  .thumbnail .thumbnail-date .thumbnail-date-month {
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  
+  .tags-list-town {
+    background-color: #198754;
+  }
+  
+  .tags-list span {
+    border-radius: 2px;
+    color: #fff;
+    cursor: default;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    margin-bottom: 4px;
+    margin-right: 5px;
+    padding: 4px 6px;
+    position: relative;
+  }
+  
+  .text-over {
+    font-size: 1.3em;
+    font-weight: 900;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .card {
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  .card-img-top {
+    border-radius: 0 !important;
+  }
+  
+  .image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 57%);
+    z-index: 1;
+  }
+  
+  .image-container .card-img-top {
+    position: relative;
+    z-index: 0;
+  }
+  
+  .tags-list-town {
+    background-color: #9c27b0;
+  }
+  /* Top left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    z-index: 999;
+  }
+  
+  .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    color: #fff;
+    font-size: 10px;
+    z-index: 999;
+  }
+  
+  .top-right {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 999;
+  }
+  
+  .thumbnail {
+    box-shadow: 0.5rem 0.5rem #00000085, -0.5rem -0.5rem #cccccca3;
+  }
+  
+  .card {
+    border: 1px solid #eee;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  }
+  .tags-list span {
+    font-size: 14px !important;
+  }
+  .expanded-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-.container {
-  max-width: 1020px !important;
+.expanded-content {
+    background-color: #2b2626;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+    text-align: center;
+    position: relative;
 }
 
-.thumbnail-date-day {
-  color: rgb(255, 255, 255);
+.expanded-content img {
+    max-width: 100%;
+    max-height: 80%;
 }
 
-.thumbnail-date-month {
-  color: rgb(255, 255, 255);
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-div {
-  display: block;
-}
-
-div,
-span {
-  /* box-sizing: initial; */
-  line-height: 1;
-}
-
-.thumbnail {
-  -webkit-touch-callout: none;
-  border-radius: 3px;
-  box-sizing: initial;
-  height: 52px;
-  min-width: 52px;
-  overflow: hidden;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  width: 52px;
-}
-
-.grey {
-  background-color: #bababaa7;
-}
-
-.thumbnail .thumbnail-date span,
-.thumbnail .thumbnail-date span {
-  display: inline-block;
-  line-height: 1;
-}
-
-.thumbnail .thumbnail-date .thumbnail-date-day {
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 4px;
-  position: relative;
-  text-align: center;
-  top: 4px;
-  width: 100%;
-}
-
-.thumbnail .thumbnail-date .thumbnail-date-month {
-  font-size: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-.tags-list-town {
-  background-color: #198754;
-}
-
-.tags-list span {
-  border-radius: 2px;
-  color: #fff;
-  cursor: default;
-  display: inline-block;
-  font-size: 12px;
-  line-height: 1;
-  margin-bottom: 4px;
-  margin-right: 5px;
-  padding: 4px 6px;
-  position: relative;
-}
-
-.text-over {
-  font-size: 1.3em;
-  font-weight: 900;
-  color: #fff;
-  padding: 20px;
-}
-
-.card {
-  border: 0 !important;
-  border-radius: 0 !important;
-}
-
-.card-img-top {
-  border-radius: 0 !important;
-}
-
-.image-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0 0 0 / 57%);
-  z-index: 1;
-}
-
-.image-container .card-img-top {
-  position: relative;
-  z-index: 0;
-}
-
-.tags-list-town {
-  background-color: #9c27b0;
-}
-/* Top left text */
-.bottom-left {
-  position: absolute;
-  bottom: 14px;
-  left: 16px;
-  z-index: 999;
-}
-
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-  color: #fff;
-  font-size: 10px;
-  z-index: 999;
-}
-
-.top-right {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 999;
-}
-
-.thumbnail {
-  box-shadow: 0.5rem 0.5rem #00000085, -0.5rem -0.5rem #cccccca3;
-}
-
-.card {
-  border: 1px solid #eee;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-}
-.tags-list span {
-  font-size: 14px !important;
+.expanded-text p {
+    font-size: 18px;
 }

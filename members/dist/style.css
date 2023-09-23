@@ -106,8 +106,8 @@ a {
 .profile::after {
   background: linear-gradient(
     45deg,
-    hsl(5 97% 63% / 0.7) 0,
-    hsl(5 97% 63% / 0) 100%
+    hsla(195, 68%, 44%, 0.7) 0,
+    hsla(188, 77%, 38%, 0) 100%
   );
   opacity: 0;
   transition: 300ms opacity linear;
@@ -478,7 +478,7 @@ span.m:focus {
   top: 0;
   width: 100%;
   height: 100%;
-  background: red;
+  background: rgb(44, 18, 193);
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -701,8 +701,8 @@ a {
 
 @keyframes loading {
   to {
-    text-shadow: 20px 0 70px #ff0266;
-    color: #ff0266;
+    text-shadow: 20px 0 70px #211fb2;
+    color: #272d9d;
   }
 }
 
