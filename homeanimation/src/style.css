@@ -20,7 +20,7 @@ div {
 
 div,
 span {
-  /* box-sizing: initial; */
+  // box-sizing: initial;
   line-height: 1;
 }
 
