@@ -80,7 +80,7 @@ $mcontact = "";
   <div>
 
   
-  <h1>Our Team</h1>
+  <h1 style = "font-size:60px; color:#fff">Our Team</h1>
   <div style = "padding: 20px; align-content:center;justify-content:center;align-items:center;">
   <div class="team" style="margin:0 auto;">
     <ul class="auto-grid" role="list">

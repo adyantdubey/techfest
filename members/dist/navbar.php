@@ -18,7 +18,7 @@
     <div>
         
             
-            <div class="nav-container"><a class="nav-tab" href="../../landing/dist/index.php.html">HOME</a><a class="nav-tab" href="../../events/dist/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
+            <div class="nav-container"><a class="nav-tab" href="../../landing/dist/index.php.html">HOME</a><a class="nav-tab" href="../../eventsfinal/home/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
           
           
           

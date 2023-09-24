@@ -17,6 +17,7 @@ $query = "SELECT * FROM event_details";
 <head>
   <meta charset="UTF-8">
   <title>CodePen - Voyage Slider | GSAP</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,9 +39,9 @@ $query = "SELECT * FROM event_details";
           
           <!-- partial -->
     </div>
-    <div style="display:flex; justify-content:center; ">
+    <div style="display:in-line;">
     <div class="container py-5" style="margin-top: 5%;">
-    <div class="row" style="display: flex; flex-wrap: wrap; margin-top: 5%;">
+    <div class="row" style=" margin-top: 5%;">
         <!-- Card 1 -->
         <?php
         $result = mysqli_query($con, $query);
@@ -49,7 +50,7 @@ $query = "SELECT * FROM event_details";
             while ($data = $result->fetch_assoc()) {
                 $img1 = "../image/image1.jpeg";
                 echo '
-            <div class="col" style="padding: 0px; flex: 50%">
+            <div class="col" style="padding: 0px;">
             <div class="card h-100" style="position: relative; max-width: 40%;">
                 <div class="bottom-right">17/08/2023</div>
                 <div class="top-right">

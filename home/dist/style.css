@@ -369,10 +369,41 @@ body {
   align-items: center;
   height: 100vh;
   position: relative;
-  background-color: #1e1f26;
+  background: hsla(180, 58%, 27%, 1); /* Fallback for browsers that don't support gradients */
+  background: linear-gradient(
+    45deg,
+    hsla(180, 58%, 27%, 1) 0%,
+    hsla(0, 1%, 14%, 1) 33%,
+    hsla(0, 0%, 0%, 1) 66%,
+    hsla(180, 64%, 31%, 1) 100%,
+    hsla(180, 64%, 31%, 1) 100%
+  ); /* Standard syntax for gradient */
   text-align: center;
   padding: 0 2em;
+  /* Add vendor-specific prefixes for gradient support */
+  background: -moz-linear-gradient(
+    45deg,
+    hsla(180, 58%, 27%, 1) 0%,
+    hsla(0, 1%, 14%, 1) 33%,
+    hsla(0, 0%, 0%, 1) 66%,
+    hsla(180, 64%, 31%, 1) 100%,
+    hsla(180, 64%, 31%, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    hsla(180, 58%, 27%, 1) 0%,
+    hsla(0, 1%, 14%, 1) 33%,
+    hsla(0, 0%, 0%, 1) 66%,
+    hsla(180, 64%, 31%, 1) 100%,
+    hsla(180, 64%, 31%, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+    startColorstr="#1d6c6c",
+    endColorstr="#232222",
+    GradientType=1
+  );
 }
+
 
 .nav h1,
 .slider h1 {
