@@ -1,7 +1,7 @@
-<?php 
-$con = mysqli_connect('localhost', 'root', '','airclub');
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'airclub');
 
-$query = "SELECT * FROM events";
+$query = "SELECT * FROM event_details";
 
 
 ?>
@@ -32,7 +32,7 @@ $query = "SELECT * FROM events";
     <div>
         
             
-            <div class="nav-container"><a class="nav-tab" href="../../home/dist/index.php.html">HOME</a><a class="nav-tab" href="../../events/dist/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="#tab-typescript">CONTACT US</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
+            <div class="nav-container"><a class="nav-tab" href="../../home/dist/index.php.html">HOME</a><a class="nav-tab" href="../../events/dist/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
           
           
           
@@ -42,12 +42,12 @@ $query = "SELECT * FROM events";
     <div class="container py-5" style="margin-top: 5%;">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Card 1 -->
-        <?php 
-        $result = mysqli_query($con,$query);
-        if($result->num_rows >0){
-          while($data = $result->fetch_assoc()){
-            $img1="../image/image1.jpeg";
-            echo'
+        <?php
+        $result = mysqli_query($con, $query);
+        if ($result->num_rows > 0) {
+            while ($data = $result->fetch_assoc()) {
+                $img1 = "../image/image1.jpeg";
+                echo '
             <div class="col" style="padding: 20px;">
             <div class="card h-100" style="position: relative; max-width: 40%;">
                 <div class="bottom-right">17/08/2023</div>
@@ -74,9 +74,9 @@ $query = "SELECT * FROM events";
                     <img src="../image/image1.jpeg" class="card-img-top" alt="Image" style="width: 100%; height: 100%; object-fit: cover;" onclick="expandCard("Cheers and Grooves in the Heart of New York!", "../image/image1.jpeg"); return false;" />
                     
                     <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase" style="color: #fff; position: absolute; display:flex; align-items:center;justify-content:center">
-                        <a href="#" onclick="expandCard(\''.$data['event_description'].'\', \''.$img1.'\'); return false;">
+                        <a href="#" onclick="expandCard(\'' . $data['event_description'] . '\', \'' . $img1 . '\'); return false;">
                             <div style="color: #fff; margin-bottom: 25px;">
-                                '.$data['event_name'].'
+                                ' . $data['event_name'] . '
                             </div>
                         </a>
                     </div>
@@ -84,7 +84,7 @@ $query = "SELECT * FROM events";
             </div>
         </div>
             ';
-          }
+            }
         }
         ?>
         
