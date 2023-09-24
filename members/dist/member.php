@@ -8,7 +8,7 @@ $con = mysqli_connect('localhost', 'root', '', 'airclub');
 
 
 
-$query = "SELECT * FROM member ";
+$query = "SELECT * FROM member_details ";
 
 
 $mname = "";

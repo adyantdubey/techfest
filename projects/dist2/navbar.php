@@ -1,3 +1,12 @@
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'airclub');
+
+$query = "SELECT * FROM `project_details`";
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -18,7 +27,7 @@
     <div>
         
             
-            <div class="nav-container"><a class="nav-tab" href="../../home/dist/index.php.html">HOME</a><a class="nav-tab" href="../../events/dist/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="#tab-typescript">CONTACT US</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
+            <div class="nav-container"><a class="nav-tab" href="../../home/dist/index.php.html">HOME</a><a class="nav-tab" href="../../events/dist/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
           
           
           
@@ -47,7 +56,7 @@
         </div>
         <div class="project-boxes jsGridView">
         <div class="project-box-wrapper">
-          <div class="project-box" style="background-color: #1e1f26;">
+          <div class="project-box" style="background-color: #1e1f26; width:270px;">
             <div class="project-box-header">
               <span>December 10, 2020</span>
               <div class="more-wrapper">
@@ -59,21 +68,26 @@
                 </button>
           </div>
         </div>
-        <div class="project-box-content-header">
-          <p class="box-content-header">Web Designing</p>
-          <p class="box-content-subheader">Prototyping</p>
+        <?php
+        $result = mysqli_query($con, $query);
+        if ($result->num_rows > 0) {
+          while ($data = $result->fetch_assoc()) {
+            echo '
+            <div>
+            <div class="project-box-content-header">
+          <p class="box-content-header">' . $data["project_name"] . '</p>
+          <p class="box-content-subheader">' . $data["project_info"] . '</p>
         </div>
         <div class="box-progress-wrapper">
           <p class="box-progress-header">Progress</p>
           <div class="box-progress-bar">
-            <span class="box-progress" style="width: 60%; background-color: #03dac6"></span>
+            <span class="box-progress" style="width: ' . $data["project_progress"] . '%; background-color: #03dac6"></span>
           </div>
-          <p class="box-progress-percentage">60%</p>
+          <p class="box-progress-percentage">' . $data["project_progress"] . '%</p>
         </div>
         <div class="project-box-footer">
           <div class="participants">
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="participant">
-            <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="participant">
+            
             <button class="add-participant" style="color: #03dac6;">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus">
                 <path d="M12 5v14M5 12h14" />
@@ -81,9 +95,20 @@
             </button>
           </div>
           <div class="days-left" style="color: #03dac6;">
-            2 Days Left
+            DAYS LEFT:' . $data["days_left"] . '
           </div>
         </div>
+        <div>
+            
+            ';
+          }
+        }
+
+
+
+
+        ?>
+        
       </div>
     </div>
 </div>
