@@ -81,7 +81,7 @@ $mcontact = "";
 
   
   <h1>Our Team</h1>
-  <div style = "padding: 20px; display:flex; align-content:center;justify-content:center;align-items:center;">
+  <div style = "padding: 20px; align-content:center;justify-content:center;align-items:center;">
   <div class="team" style="margin:0 auto;">
     <ul class="auto-grid" role="list">
       
@@ -92,9 +92,9 @@ $mcontact = "";
           echo '
                <li>
         <a href="https://swop.link/cool" target="_blank" class="profile">
-          <h2 class="profile__name">' . $data["name"] . '</h2>
-          <p>' . $data["id"] . '</p>
-          <img alt="' . $data["qwe"] . '" src="" />
+          <h2 class="profile__name">' . $data["Member_name"] . '</h2>
+          <p>' . $data["Member_designation"] . '</p>
+          <img alt="img" src="../../events/image/image1.jpeg" />
         </a>
       </li>
                ';

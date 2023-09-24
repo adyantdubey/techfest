@@ -27,9 +27,8 @@
 			<div class="nav-container">
 				<button id="home" class="nav-tab" location="index.php.html">HOME</button>
 				<button class="nav-tab" id="event" location="../../events/dist/events.php">EVENTS</button>
-				<a id="member" class="nav-tab" href="../../members/dist/member.php">MEMBERS</a>
-				<a id = "projects" class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</a>
-				<a class="nav-tab" href="#tab-vite">VITE</a>
+				<button id="member" class="nav-tab" location="../../members/dist/member.php">MEMBERS</button>
+				<button id = "projects" class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</button>
 				<span class="nav-tab-slider"></span></div>
 		  </section>
 		  <!-- <main class="main">
@@ -101,7 +100,7 @@
 			<div class="info previous--info">
 				<h1 class="text name">Projects</h1>
 				<h4 class="text location">AI & Robotics Club</h4>
-				<p class="text description">Join the Family</p>
+				<p class="text description">Visit Our Dreams</p>
 			</div>
 		</div>
 	</div>
@@ -206,8 +205,8 @@
 		const location = document.getElementById('event').getAttribute('location');
 	  window.location.href = location;
 	});
-	document.getElementById('home').addEventListener('click', function() {
-		const location = document.getElementById('home').getAttribute('location');
+	document.getElementById('member').addEventListener('click', function() {
+		const location = document.getElementById('member').getAttribute('location');
 	  window.location.href = location;
 	});
 	document.getElementById('projects').addEventListener('click',function(){

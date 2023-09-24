@@ -38,17 +38,18 @@ $query = "SELECT * FROM event_details";
           
           <!-- partial -->
     </div>
-    <div style="display:flex; justify-content:center;">
+    <div style="display:flex; justify-content:center; ">
     <div class="container py-5" style="margin-top: 5%;">
-    <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; flex-wrap: wrap; margin-top: 5%;">
+    <div class="row" style="display: flex; flex-wrap: wrap; margin-top: 5%;">
         <!-- Card 1 -->
         <?php
         $result = mysqli_query($con, $query);
         if ($result->num_rows > 0) {
+            $count = 0;
             while ($data = $result->fetch_assoc()) {
                 $img1 = "../image/image1.jpeg";
                 echo '
-            <div class="col" style="padding: 10px;">
+            <div class="col" style="padding: 0px; flex: 50%">
             <div class="card h-100" style="position: relative; max-width: 40%;">
                 <div class="bottom-right">17/08/2023</div>
                 <div class="top-right">
@@ -84,12 +85,17 @@ $query = "SELECT * FROM event_details";
             </div>
         </div>
             ';
+                $count++;
+                if ($count % 3 == 0) {
+                    echo '</div><div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; flex-wrap: wrap; margin-top: 5%;">';
+                }
             }
         }
         ?>
         
         
         <!-- Repeat for other cards -->
+
     </div>
 </div>
 </div>
