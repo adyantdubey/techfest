@@ -38,9 +38,9 @@ $query = "SELECT * FROM event_details";
           
           <!-- partial -->
     </div>
-    <div style="display:flex;align-items:center; justify-content:center;">
+    <div style="display:flex; justify-content:center;">
     <div class="container py-5" style="margin-top: 5%;">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="display: flex; flex-wrap: wrap; margin-top: 5%;">
         <!-- Card 1 -->
         <?php
         $result = mysqli_query($con, $query);
@@ -48,7 +48,7 @@ $query = "SELECT * FROM event_details";
             while ($data = $result->fetch_assoc()) {
                 $img1 = "../image/image1.jpeg";
                 echo '
-            <div class="col" style="padding: 20px;">
+            <div class="col" style="padding: 10px;">
             <div class="card h-100" style="position: relative; max-width: 40%;">
                 <div class="bottom-right">17/08/2023</div>
                 <div class="top-right">
@@ -88,41 +88,7 @@ $query = "SELECT * FROM event_details";
         }
         ?>
         
-        <div class="col" style="padding: 20px;">
-            <div class="card h-100" style="position: relative; max-width: 40%;">
-                <div class="bottom-right">17/08/2023</div>
-                <div class="top-right">
-                    <div class="tags-list mb-2">
-                        <span class="tags-list-town text-uppercase">NEW YORK</span>
-                        <span style="background-color: #28a745; text-transform: uppercase; font-weight: 800;">
-                            FREE
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Other card content -->
-                <div class="image-container" style="width: auto; height: auto; max-width: 100%; max-height: 100%;">
-                    <div class="bottom-left">
-                        <div class="thumbnail" style="background-color: #ffa5009e">
-                            <div class="thumbnail-date">
-                                <span class="thumbnail-date-day">17</span>
-                                <span class="thumbnail-date-month">ago</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <img src="../image/image1.jpeg" class="card-img-top" alt="Image" style="width: 100%; height: 100%; object-fit: cover;" onclick="expandCard('Cheers and Grooves in the Heart of New York!', '../image/image1.jpeg'); return false;" />
-                    
-                    <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center text-uppercase" style="color: #fff; position: absolute; display:flex; align-items:center;justify-content:center">
-                        <a href="#" onclick="expandCard('hi this is kashik', '../image/image1.jpeg'); return false;">
-                            <div style="color: #fff; margin-bottom: 25px;">
-                                bht hrd-2023
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- Repeat for other cards -->
     </div>
 </div>
