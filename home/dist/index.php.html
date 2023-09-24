@@ -20,21 +20,30 @@
 <body>
 
 	<div>
+
 		<section class="nav">
 			<h1>AI & ROBOTICS CLUB</h1>
 			<h3 class="span loader"><span class="m"></span><span class="m">N</span><span class="m">I</span><span class="m">T</span>&nbsp;<span class="m">A</span><span class="m">N</span><span class="m">D</span><span class="m">H</span><span class="m"></span><span class="m">R</span><span class="m">A</span>&nbsp;<span class="m"></span><span class="m">P</span><span class="m">R</span><span class="m">A</span><span class="m">D</span><span class="m">E</span><span class="m">S</span><span class="m">H</span></h3>
-			<div class="nav-container"><a class="nav-tab" href="../../voyage-slider-gsap/dist/index.php.html">HOME</a><a class="nav-tab" href="../../events/dist/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="#tab-typescript">CONTACT US</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
+			<div class="nav-container">
+				<button id="home" class="nav-tab" location="index.php.html">HOME</button>
+				<button class="nav-tab" id="event" location="../../events/dist/events.php">EVENTS</button>
+				<a id="member" class="nav-tab" href="../../members/dist/member.php">MEMBERS</a>
+				<a id = "projects" class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</a>
+				<a class="nav-tab" href="#tab-vite">VITE</a>
+				<span class="nav-tab-slider"></span></div>
 		  </section>
-		  <main class="main">
+		  <!-- <main class="main">
 			
-		  </main>
-		  <canvas class="background"></canvas><!-- SGVsbG8hIE15IG5hbWUgaXMgU2FyYSBNYXphbC4gV2VsY29tZSB0byBteSBDb2RlUGVuIQ== -->
+		  </main> -->
+		  <canvas class="background"></canvas>
 		  <!-- partial -->
 	</div>
+	
+
 <!-- partial:index.partial.html -->
 <!-- Navbar -->
 
-  
+	
 <div class="app">
 
 	<div class="cardList">
@@ -187,6 +196,26 @@
 	<a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
 	<a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
 </div>
+
+<script>
+	document.getElementById('home').addEventListener('click', function() {
+		const location = document.getElementById('home').getAttribute('location');
+	  window.location.href = location;
+	});
+	document.getElementById('event').addEventListener('click', function() {
+		const location = document.getElementById('event').getAttribute('location');
+	  window.location.href = location;
+	});
+	document.getElementById('home').addEventListener('click', function() {
+		const location = document.getElementById('home').getAttribute('location');
+	  window.location.href = location;
+	});
+	document.getElementById('projects').addEventListener('click',function(){
+		const location = document.getElementById('projects').getAttribute('location');
+		window.location.href = location;
+	})
+  </script>
+
 
 <!-- partial -->
   <script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js'></script>

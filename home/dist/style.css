@@ -425,7 +425,7 @@ a {
   height: 75px;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   background: #1e1f26;
-  z-index: 10;
+  z-index: 1;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -440,6 +440,8 @@ a {
   top: 0;
 }
 .nav-tab {
+  /* position: relative;
+  z-index: 2; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -464,15 +466,15 @@ a {
   background: #03dac6;
   transition: left 0.3s ease;
 }
-.background {
+/* .background {
   position: absolute;
   height: 90vh;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: auto;
-}
+  z-index: -1;
+} */
 @media (min-width: 800px) {
   .nav h1,
   .slider h1 {
@@ -507,13 +509,17 @@ a {
 }
 
 .background {
-  position: absolute;
-  height: 100vh;
+  /* z-index:-1; 
+  position: absolute; 
+  left: 0px; 
+  top: 0px; */
+  position: absolute; 
+  height: 100%;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 0;
+  z-index: -1;
 }
 .loader span {
   color: #faebd7;
