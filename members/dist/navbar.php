@@ -18,7 +18,12 @@
     <div>
         
             
-            <div class="nav-container"><a class="nav-tab" href="../../landing/dist/index.php.html">HOME</a><a class="nav-tab" href="../../eventsfinal/home/events.php">EVENTS</a><a class="nav-tab" href="../../members/dist/member.php">MEMBERS</a><a class="nav-tab" href="../../projects/dist2/navbar.php">PROJECTS</a><a class="nav-tab" href="#tab-vite">VITE</a><span class="nav-tab-slider"></span></div>
+    <div class="nav-container">
+        <button id="home" class="nav-tab" location="../../home/dist/index.php.html">HOME</button>
+        <button class="nav-tab" id="event" location="../../eventsfinal/nw.php">EVENTS</button>
+        <button id="member" class="nav-tab" location="../../members/dist/member.php">MEMBERS</button>
+        <button id = "projects" class="nav-tab" location="../../projects/dist/navbar.php">PROJECTS</button>
+        <span class="nav-tab-slider"></span></div>
           
           
           
@@ -26,4 +31,22 @@
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="../dist/script2.js"></script>
+    <script>
+  document.getElementById('home').addEventListener('click', function() {
+    const location = document.getElementById('home').getAttribute('location');
+    window.location.href = location;
+  });
+  document.getElementById('event').addEventListener('click', function() {
+    const location = document.getElementById('event').getAttribute('location');
+    window.location.href = location;
+  });
+  document.getElementById('member').addEventListener('click', function() {
+    const location = document.getElementById('member').getAttribute('location');
+    window.location.href = location;
+  });
+  document.getElementById('projects').addEventListener('click',function(){
+    const location = document.getElementById('projects').getAttribute('location');
+    window.location.href = location;
+  })
+  </script>
 </body>
