@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>CodePen - Voyage Slider | GSAP</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'><link rel="stylesheet" href="./style2.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Raleway:wght@100;200;300;400;500&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -19,10 +19,10 @@
         
             
     <div class="nav-container">
-        <button id="home" class="nav-tab" location="../../home/dist/index.php.html">HOME</button>
-        <button class="nav-tab" id="event" location="../../eventsfinal/nw.php">EVENTS</button>
-        <button id="member" class="nav-tab" location="../../members/dist/member.php">MEMBERS</button>
-        <button id = "projects" class="nav-tab" location="../../projects/dist/navbar.php">PROJECTS</button>
+        <button id="home" class="nav-tab" location="../home/dist/index.php.html">HOME</button>
+        <button class="nav-tab" id="event" location="../eventsfinal/nw.php">EVENTS</button>
+        <button id="member" class="nav-tab" location="../members/dist/member.php">MEMBERS</button>
+        <button id = "projects" class="nav-tab" location="../projects/dist/navbar.php">PROJECTS</button>
         <span class="nav-tab-slider"></span></div>
           
           
