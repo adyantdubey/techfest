@@ -1,3 +1,5 @@
+<?php include 'navbar.php'; ?>
+
 <?php
 $con = mysqli_connect('localhost', 'root', '', 'airclub');
 
@@ -64,12 +66,7 @@ $query = "SELECT * FROM event_details";
     <div>
         
             
-    <div class="nav-container">
-        <button id="home" class="nav-tab" location="../../home/dist/index.php.html">HOME</button>
-        <button class="nav-tab" id="event" location="../../eventsfinal/nw.php">EVENTS</button>
-        <button id="member" class="nav-tab" location="../../members/dist/member.php">MEMBERS</button>
-        <button id = "projects" class="nav-tab" location="../../projects/dist/navbar.php">PROJECTS</button>
-        <span class="nav-tab-slider"></span></div>
+    
             <div style="margin-top: 10%;">
             <div class="section-wrapper" data-scroll-section>  
               <div class="container">
